@@ -1,0 +1,16 @@
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        first=second=third= None
+        for num in (nums):
+            if num in (first,second,third):
+                continue
+            elif first==None or num>first:
+                first,second,third=num,first,second
+            elif second==None or num>second:
+                second,third=num,second
+            elif third==None or num>third:
+                third=num
+        if third==None:
+            return max(nums)
+        else :
+            return third 
